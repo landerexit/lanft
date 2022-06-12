@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/lanft/static/css/main.6a2ef5b8.css",
+    "main.js": "/lanft/static/js/main.63d0869f.js",
+    "static/media/no-cover.jpg": "/lanft/static/media/no-cover.b7aba27c39f8adaf75fc.jpg",
+    "static/media/image1.png": "/lanft/static/media/image1.d8d4048dd0f92453e094.png",
+    "static/media/image2.png": "/lanft/static/media/image2.724df11ee2b17a5392b2.png",
+    "static/media/image3.png": "/lanft/static/media/image3.6ff381fce404b864ffdd.png",
+    "static/media/logo.svg": "/lanft/static/media/logo.ec8d0dd1c61c269a9da9e677cc95ff68.svg",
+    "static/media/noavatar.svg": "/lanft/static/media/noavatar.d04e51c6a65ad77c455e041953878408.svg",
+    "static/media/business-card.svg": "/lanft/static/media/business-card.79658f0834854bbb09ef305e8d4477af.svg",
+    "static/media/verif.svg": "/lanft/static/media/verif.84f02f85b07cb74810af216c1f20313d.svg",
+    "static/media/wallet.svg": "/lanft/static/media/wallet.61cab59d59b99072d7534c150d3c1947.svg",
+    "static/media/tg.svg": "/lanft/static/media/tg.9dbb583134699b24007fe9a76f9a95c2.svg",
+    "static/media/vk.svg": "/lanft/static/media/vk.fe1a810ba610130f979b96db05fa3688.svg",
+    "static/media/ether.svg": "/lanft/static/media/ether.33b4080657cc2fafa6799d67b039d5bf.svg",
+    "index.html": "/lanft/index.html",
+    "static/media/habr.svg": "/lanft/static/media/habr.e69641e3de34bb022dbb5c97b812c328.svg",
+    "static/media/github.svg": "/lanft/static/media/github.73e6eeb2049274820f2f54c1a64b299a.svg",
+    "static/media/arrow.svg": "/lanft/static/media/arrow.5101d0524bc5bc2125a59721c05b222a.svg",
+    "static/media/status-dot.svg": "/lanft/static/media/status-dot.fa73f20491672337e54c1e83a02c5f4f.svg",
+    "main.6a2ef5b8.css.map": "/lanft/static/css/main.6a2ef5b8.css.map",
+    "main.63d0869f.js.map": "/lanft/static/js/main.63d0869f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a2ef5b8.css",
+    "static/js/main.63d0869f.js"
+  ]
+}
