@@ -1,0 +1,59 @@
+@import '../_vars'
+
+.shop-page
+    max-width: 90rem
+
+    margin: 0 auto
+
+    &__headline
+        padding: 4rem
+        font-size: 2rem
+        font-weight: bold
+
+    &__collections-container
+        width: 100%
+        display: grid
+        gap: $gap-500
+        margin-bottom: $gap-700
+        grid-template-columns: 1fr 1fr 1fr 1fr
+
+    &__collection-container
+        width: 100%
+        font-size: .75rem
+
+@media screen and (min-width: 320px) and (max-width: 1023px)
+    .shop-page
+        max-width: initial
+
+        margin: 0
+        &__headline
+            text-align: center
+            font-size: 1.5rem
+            padding: $gap-600 $gap-500
+
+        &__collections-container
+            padding: 0 $gap-200
+
+            margin-bottom: $gap-500
+
+            gap: $gap-200
+            grid-template-columns: 1fr 1fr
+
+        &__collection-container
+            font-size: .6rem
+
+@media screen and (min-width: 1024px) and (max-width: 1359px)
+    .shop-page
+        max-width: 75rem
+
+        &__collections-container
+            grid-template-columns: 1fr 1fr 1fr
+
+            &__collection-container
+                width: 100%
+                font-size: .70rem
+
+@media screen and (min-width: 1280px) and (max-width: 1359px)
+    .shop-page
+        &__collections-container
+            grid-template-columns: 1fr 1fr 1fr 1fr

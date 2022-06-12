@@ -1,0 +1,31 @@
+@import '_vars'
+
+::root
+    font-size: clamp(10px, 16px, 25px)
+
+body
+    background-color: $clr-primary-500
+
+    font-family: 'Inter', sans-serif
+    color: $clr-secondary-500
+
+.wrapper
+    width: 100%
+    min-height: 1px
+    min-height: calc(97vh - 1.5rem)
+
+.tile
+    background-color: $clr-primary-500
+    padding: $gap-300
+    border-radius: .75rem
+
+.balance-container
+    padding: $gap-300 $gap-400
+
+    border: 1px solid $clr-secondary-800
+    border-radius: .5em
+    & > *+*
+        margin-left: .5em
+
+    &__ether-img
+        width: .85em

@@ -1,0 +1,87 @@
+@import '../_vars'
+
+.fields-container
+    width: 100%
+    text-align: center
+
+    & > *+*
+        margin-top: $gap-500
+
+    &:focus
+        border: none
+
+    &__img
+        width: 100%
+
+.field-container
+    background-color: $clr-primary-800
+    padding: $gap-300
+
+    text-align: initial
+
+    font-size: .75rem
+
+    border-radius: .75em
+
+    &__field-legend
+        display: inline
+        color: $clr-secondary-500
+
+        padding-inline-start: 0
+        padding-inline-end: 0
+
+    &__field-input
+        border: none
+        background: none
+
+        width: 100%
+        height: 2em
+
+        color: inherit
+
+        padding: 0
+
+    &__field-input:focus
+        border: none
+        outline: none
+
+    & > *+*
+        margin-top: $gap-200
+
+    &__error-sign
+        display: inline
+        color: $clr-danger
+
+        &__hidden
+            opacity: 0
+
+@media screen and (max-height: 800px)
+    .fields-container
+        text-align: center
+
+        & > *+*
+            margin-top: $gap-400
+
+        &__submit
+            margin-top: $gap-400
+
+    .field-container
+        font-size: .8rem
+
+        & > *+*
+            margin-top: $gap-200
+
+@media screen and (max-height: 600px)
+    .fields-container
+        width: 100%
+        text-align: center
+
+        & > *+*
+            margin-top: $gap-200
+
+        &__submit
+            margin-top: $gap-200
+
+    .field-container
+        & > *+*
+            margin-top: $gap-200

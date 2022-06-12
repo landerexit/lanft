@@ -1,0 +1,146 @@
+@improt '../img/_vars'
+
+.user-page
+    background-color: $clr-primary-500
+    position: relative
+
+    min-height: 95vh
+    max-width: 70rem
+
+    margin: 0 auto
+
+    box-shadow: 0 0 10vw rgb(0, 0, 0, .75)
+
+    & > *+*
+        margin-top: $gap-200
+
+    &__background
+        filter: blur(2rem) opacity(75%)
+
+        &__wrapper
+            z-index: -10
+            position: fixed
+
+            background-color: black
+
+            left: -10%
+            bottom: -25%
+            width: 120%
+            height: 120%
+
+    &__main-container
+        padding: 0 $gap-700
+        & > *+*
+            margin-top: $gap-200
+
+    &__header
+        height: 25rem
+
+        background-repeat: no-repeat
+        background-size: cover
+
+    &__avatar-shifter
+        position: relative
+        height: 2rem
+
+    &__avatar-container
+        position: absolute
+        bottom: 0
+        width: 12%
+        font-size: 55%
+
+    &__user-panel
+        padding: $gap-200 0
+        width: 100%
+
+    &__user-info
+        width: 100%
+        & > *+*
+            margin-top: $gap-400
+
+    &__names-container
+        & > *+*
+            margin-top: $gap-200
+
+    &__user-name
+        font-size: 1.5rem
+        font-weight: bold
+
+    &__nickname
+        color: grey
+
+    &__name-and-balance
+        width: 100%
+
+    &__balance-container
+        margin-left: auto
+        font-size: 1rem
+
+    &__statistic-container
+        font-size: .8rem
+        color: $clr-secondary-800
+
+        & > *+*
+            margin-left: $gap-300
+
+    &__statistic-line
+        display: inline-flex
+
+        & > *+*
+            margin-left: $gap-200
+
+    &__statistic-number
+        font-size: 1rem
+        color: $clr-secondary-500
+
+    &__statistic-text
+        align-self: center
+
+    &__inventory
+        display: grid
+        gap: $gap-500
+        padding: $gap-400 0 $gap-700 0
+        grid-template-columns: 1fr 1fr 1fr 1fr
+
+    &__open-change-cover
+        opacity: 25%
+
+        color: white
+        background-color: rgb(0, 0, 0)
+
+        border: 2px dashed white
+
+        padding: 0 $gap-200
+        height: 20%
+        width: 30%
+
+        transition-duration: 150ms
+
+        &:hover
+            opacity: 100%
+            box-shadow: 0 0 1em white
+
+        &:active
+            color: black
+            background-color: white
+
+@media screen and (max-width: 1023px)
+    .user-page
+        max-width: initial
+
+        margin: 0
+        &__header
+            height: 15rem
+        &__avatar-container
+            position: absolute
+            bottom: 0
+            width: 30%
+            font-size: 55%
+        &__main-container
+            padding: $gap-300
+            & > *+*
+                margin-top: $gap-200
+        &__inventory
+            padding: 0
+            gap: $gap-300
+            grid-template-columns: 1fr 1fr

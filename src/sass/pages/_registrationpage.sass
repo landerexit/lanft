@@ -1,0 +1,70 @@
+@import '../_vars'
+
+.registration-page
+    width: 100%
+    max-width: 26rem
+
+    & > *+*
+        margin-top: $gap-500
+
+    &__avatar-cut
+        box-shadow: none
+        border: 0
+        width: 9rem
+
+    &__avatar-input-box
+        justify-content: space-evenly
+
+    &__dropzone-section
+        display: block
+        border-color: $clr-secondary-500
+        color: $clr-secondary-500
+
+        border-radius: .5rem
+
+        cursor: pointer
+
+        overflow: none
+        transition-duration: 300ms
+
+        &:hover
+            box-shadow: 0 0 1em grey
+
+        &__done
+            color: $clr-success
+            border-color: $clr-success
+
+    &__dropzone-text
+        overflow: none
+
+        border: 1px solid $clr-secondary-500
+        border-color: inherit
+
+        border-radius: .5rem
+
+        white-space: nowrap
+        padding: $gap-300 $gap-500
+
+        color: inherit
+
+        font-size: 1rem
+
+@media screen and (max-height: 800px)
+    .registration-page
+        max-width: 23rem
+
+        & > *+*
+            margin-top: $gap-300
+
+        &__avatar-cut
+            width: 8rem
+
+@media screen and (max-height: 600px)
+    .registration-page
+        max-width: 23rem
+
+        & > *+*
+            margin-top: $gap-400
+
+        &__avatar-cut
+            width: 8rem

@@ -1,0 +1,74 @@
+@import '../_vars'
+
+.collection-container
+    width: 100%
+
+    overflow: hidden
+    user-select: none
+
+    cursor: pointer
+
+    border: 1px solid $clr-primary-800
+    border-radius: .5rem
+
+    transition-duration: 400ms
+
+    &:hover
+        box-shadow: 0 0 1em rgb(0, 0, 0, .50)
+
+    &__image-cut
+        display: inline-block
+        width: 100%
+        aspect-ratio: 1
+
+        position: relative
+        overflow: hidden
+
+    &__image
+        position: absolute
+        top: 0
+        left: 0
+        width: 0
+        height: 0
+        min-width: 100%
+        min-height: 100%
+        object-fit: cover
+
+    &__name
+        text-align: center
+        line-height: 1em
+        font-size: 1.75em
+        font-weight: bold
+
+    &__description
+        font-size: 1.2em
+        padding: $gap-500
+        background-color: inherit
+        height: 25%
+        & > *+*
+            margin-top: $gap-200
+
+    &__avatar-container
+        position: absolute
+        width: 100%
+        font-size: 50%
+        bottom: 0
+
+    &__avatar-shifter
+        position: relative
+
+        width: 40%
+
+    &__avatar-shifter ~ &__description
+        padding: $gap-200 0 $gap-400 0
+        height: 20%
+
+    &__author
+        color: grey
+
+    &__author-link
+        color: $clr-tertiary-500
+
+    &__about
+        text-align: center
+        color: grey

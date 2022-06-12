@@ -1,0 +1,114 @@
+@import '../_vars'
+
+.footer
+    color: $clr-primary-500
+    background-color: #1868b7
+
+    padding: 3rem 6rem
+
+    z-index: 100
+
+    width: 100%
+    & > *+*
+        margin-left: $gap-700
+
+    &__index
+        color: $clr-primary-500
+        font-size: 1.1rem
+        font-weight: bold
+
+    &__column
+        width: 100%
+
+        & > *+*
+            margin-top: $gap-400
+
+        &__links
+            text-align: center
+
+        &__author
+            text-align: right
+
+    &__section
+        & > *+*
+            margin-top: $gap-200
+
+    &__author-name
+        font-size: .8rem
+
+    &__author-nickname
+        margin-top: $gap-100
+        font-size: .8rem
+
+    &__links-box
+        margin-top: $gap-500
+        & > *+*
+            margin-left: 2rem
+
+    &__link-img
+        width: 2.75rem
+        border-radius: 50%
+
+        cursor: pointer
+        &:active
+            filter: contrast(50%)
+
+        &__card
+            border-radius: 0%
+
+    &__paragraph
+        font-size: .8rem
+        line-height: 1.25rem
+
+@media screen and (min-width: 0px) and (max-width: 1023px)
+    .footer
+        flex-direction: column
+        padding: 2rem 1rem
+
+        text-align: center
+
+        & > *+*
+            margin-left: 0
+            margin-top: $gap-400
+
+        &__link-img
+            width: 2.25rem
+
+        &__index
+            font-size: 1rem
+
+        &__paragraph
+            font-size: .7rem
+            line-height: 1.25rem
+
+        &__column
+            &__author
+                text-align: center
+
+@media screen and (min-width: 1024px) and (max-width: 1279px)
+    .footer
+        padding: 2rem 3rem
+
+        &__link-img
+            width: 2.25rem
+
+        &__index
+            font-size: 1rem
+
+        &__paragraph
+            font-size: .7rem
+            line-height: 1.25rem
+
+@media screen and (min-width: 1280px) and (max-width: 1359px)
+    .footer
+        padding: $gap-500 2.75rem
+
+        &__link-img
+            width: 2rem
+
+        &__index
+            font-size: 1rem
+
+        &__paragraph
+            font-size: .7rem
+            line-height: 1.25rem

@@ -1,0 +1,48 @@
+@import '../vars'
+
+%button
+    width: 100%
+    padding: $gap-300 $gap-500
+
+    border-radius: .5em
+    border: 0
+
+    font: inherit
+    font-weight: bold
+    color: $clr-primary-500
+    background-color: $clr-tertiary-800
+
+    cursor: pointer
+
+    transition-duration: 400ms
+
+    &:active
+        background-color: $clr-tertiary-500
+
+    &:hover
+        box-shadow: 0 0 1em $clr-tertiary-500
+
+.primary-button
+    @extend %button
+
+.secondary-button
+    @extend %button
+
+    background-color: inherit
+
+    color: $clr-tertiary-800
+
+    border: 1px solid $clr-tertiary-800
+
+    &:active
+        color: $clr-primary-500
+
+    &__delete
+        border-color: $clr-danger
+        color: $clr-danger
+
+        &:active
+            background-color: $clr-danger
+
+        &:hover
+            box-shadow: 0 0 1em $clr-danger

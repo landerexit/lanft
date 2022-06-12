@@ -1,0 +1,41 @@
+@import '../_vars'
+
+.avatar-container
+    position: relative
+    width: 100%
+
+    &__verif-star
+        background: $clr-primary-500
+        border-radius: 50%
+
+        position: absolute
+        right: 0
+        bottom: 0
+
+        padding: .2em
+        width: 4.5em
+
+        box-shadow: 0 0 .5rem rgb(0,0,0,.25)
+
+    &__avatar-cut
+        display: inline-block
+        width: 100%
+        aspect-ratio: 1
+
+        position: relative
+        overflow: hidden
+
+        border-radius: 50%
+        border: .75em solid $clr-primary-500
+
+        box-shadow: 0 0 1rem rgb(0,0,0,.3)
+
+    &__avatar-img
+        position: absolute
+        top: 0
+        left: 0
+        width: 0
+        height: 0
+        min-width: 100%
+        min-height: 100%
+        object-fit: cover

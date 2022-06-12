@@ -1,0 +1,30 @@
+@import '../_vars'
+
+.popup-container
+    position: relative
+
+    background-color: $clr-primary-500
+    padding: $gap-400 $gap-400
+
+    border-radius: .5rem
+
+    &__wrapper
+        background-color: rgb(0, 0, 0, .75)
+        z-index: 150
+        position: fixed
+        width: 100%
+        height: calc( 100% - 3.5rem )
+
+    &__exit-button
+        position: absolute
+
+        right: - $gap-600
+        top: 0
+        padding: $gap-200
+        width: 2rem
+
+@media screen and (min-width: 0px) and (max-width: 1023px)
+    .popup-container
+        &__exit-button
+            right: $gap-100
+            top: $gap-100
