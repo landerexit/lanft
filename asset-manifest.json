@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/lanft/static/css/main.6a2ef5b8.css",
-    "main.js": "/lanft/static/js/main.f061e9c4.js",
+    "main.js": "/lanft/static/js/main.431583d2.js",
     "static/media/no-cover.jpg": "/lanft/static/media/no-cover.b7aba27c39f8adaf75fc.jpg",
     "static/media/image1.png": "/lanft/static/media/image1.d8d4048dd0f92453e094.png",
     "static/media/image2.png": "/lanft/static/media/image2.724df11ee2b17a5392b2.png",
@@ -20,10 +20,10 @@
     "static/media/arrow.svg": "/lanft/static/media/arrow.5101d0524bc5bc2125a59721c05b222a.svg",
     "static/media/status-dot.svg": "/lanft/static/media/status-dot.fa73f20491672337e54c1e83a02c5f4f.svg",
     "main.6a2ef5b8.css.map": "/lanft/static/css/main.6a2ef5b8.css.map",
-    "main.f061e9c4.js.map": "/lanft/static/js/main.f061e9c4.js.map"
+    "main.431583d2.js.map": "/lanft/static/js/main.431583d2.js.map"
   },
   "entrypoints": [
     "static/css/main.6a2ef5b8.css",
-    "static/js/main.f061e9c4.js"
+    "static/js/main.431583d2.js"
   ]
 }
