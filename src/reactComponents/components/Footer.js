@@ -1,19 +1,16 @@
 import React from "react";
 
-import tgImg from '../img/footer/tg.svg'
-import vkImg from '../img/footer/vk.svg'
-import cardImg from '../img/footer/business-card.svg'
-import habrImg from '../img/footer/habr.svg'
-import githubImg from '../img/footer/github.svg'
-
+import tgImg from '../../img/footer/tg.svg'
+import vkImg from '../../img/footer/vk.svg'
+import cardImg from '../../img/footer/business-card.svg'
+import habrImg from '../../img/footer/habr.svg'
+import githubImg from '../../img/footer/github.svg'
 
 function Footer() {
     return (
         <footer className="footer flex flex-justify-center">
 
             <section className="footer__column">
-                
-
                 <div className="footer__section">
                     <h3 className="footer__index">Задействованные технологии</h3>
                     <p className="footer__paragraph">

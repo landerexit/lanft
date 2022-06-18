@@ -2,12 +2,14 @@
   "name": "lanft",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://landerexit.github.io/lanft",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "formik": "^2.2.9",
     "framer-motion": "^6.3.3",
+    "gh-pages": "^4.0.0",
     "mobx": "^6.5.0",
     "mobx-react": "^7.4.0",
     "react": "^18.1.0",
@@ -23,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

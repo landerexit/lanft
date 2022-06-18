@@ -1,8 +1,12 @@
 import * as yup from 'yup';
 
-import DataStore from './DataStore';
+export class ValidationVars {
+    constructor(stores) {
+        this.users = stores.UsersStore.usersFromLocal
+    }
 
-class ValidationSamples {
+    users = []
+
     fieldsRegSample = [ 
         {name: "secondName", nameForLegend: "Фамилия", type: 'text'}, 
         {name: "firstName", nameForLegend: "Имя", type: 'text'},
@@ -40,7 +44,6 @@ class ValidationSamples {
         password: yup
             .string()
             .required("Поле обязательно к заполнению"),
-
     })
 
     regSchema = yup.object().shape({
@@ -59,8 +62,8 @@ class ValidationSamples {
             .min(8, "Логин должен быть не меньше 8 символов")
             .max(16, "Логин должен быть не больше 16 символов")
             .test('isAvailableLogin', 'Логин занят', 
-                function(login) {
-                    const matches =  DataStore.usersFromLocal.find(user => user.login === login)
+                (login) => {
+                    const matches = this.users.find(user => user.login === login)
 
                     return !matches
             })
@@ -78,5 +81,3 @@ class ValidationSamples {
             .required("Поле обязательно к заполнению"),
     })
 }
-
-export default new ValidationSamples()

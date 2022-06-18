@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-import img1 from '../img/StartPage/image1.png'
-import logoImg from '../img/logo.svg'
+import img1 from '../../img/StartPage/image1.png'
+import logoImg from '../../img/logo.svg'
 
-function StartPage(props){
+function StartPage(){
     return (
         <div className='flex flex-align-center flex-justify-center wrapper'>
             <div className='tile flex flex-align-center flex-column start-page'>
@@ -22,19 +23,19 @@ function StartPage(props){
                     alt='телефон'
                 />
 
-                <div className='flex start-page__buttons-section'>
-                        <button
-                            className='primary-button start-page__signin-button start-page__link'
-                            onClick={props.NavigationControl.goSignin}
+                <div className='flex start-page__buttons-section start-page__button'>
+                        <Link
+                            className='primary-button flex flex-align-center'
+                            to='/registration'
                         >
                             Регистрация
-                        </button>
-                        <button 
-                            className='secondary-button start-page__login-button start-page__link'
-                            onClick={props.NavigationControl.goLogin}
+                        </Link>
+                        <Link 
+                            className='secondary-button start-page__button flex flex-align-center'
+                            to='/login'
                         >
                             Вход в аккаунт
-                        </button>
+                        </Link>
                 </div>
             </div>
         </div>

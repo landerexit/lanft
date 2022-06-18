@@ -1,26 +1,4 @@
-import { action, makeObservable, observable } from "mobx";
-
-import DataStore from "./DataStore";
-
-class ShopStore {
-    constructor () {
-        makeObservable(this, {
-            shopAssortment: observable.deep,
-
-            checkOwnerHistory: action,
-            deleteUser: action,
-            buyItem: action,
-            generateRandomActivity: action,
-            generateRandomUser: action,
-            generateRandomOwnerHistory: action,
-            getShopAssortmentFromLocal: action,
-        })
-
-        this.shopAssortment = this.getShopAssortmentFromLocal()
-    }
-
-    shopAssortment = []
-    
+export class InitialVars {
     shopAssortmentInit = [
         {
             name: 'Retro Japan',
@@ -922,150 +900,109 @@ class ShopStore {
 
     ]
 
-    checkOwnerHistory = (tempOwnerHistory) => {
-        let newOwnerHistory = tempOwnerHistory
+    usersInit = [
+        {
+            login: 'landerexit',
+            firstName: 'Эмиль',
+            secondName: 'Каримов',
+            avatar: 'https://i.ibb.co/Jz6bzWL/death-note-suite-2020-2-749x1024.jpg',
+            cover: 'https://i.ibb.co/sCs4gNR/1463840500-92a1f981c379ae690841deaf8f87c357.png',
+        },
 
-        if (tempOwnerHistory.length === 6) {
-            newOwnerHistory.pop()
-            return [...newOwnerHistory]
-        } else {
-            return [...tempOwnerHistory]
-        }
-    }
+        {
+            login: 'Nikskey',
+            firstName: 'Никита',
+            secondName: 'Зинин',
+            avatar: 'https://i.ibb.co/Vg3Hfhv/Je6-XOGTTX9m-Z6u-Xf-Z7igg-Yr-QGN4-J0or-L3-MHCgg-HQm-q-FKAn-PB-h2-O-L3ys1l4na-OP4lxkdp.jpg',
+            cover: 'https://i.ibb.co/rfDWz3Z/50.jpg',
+        },
 
-    deleteUser = () => {
-        this.shopAssortment = this.shopAssortment.map(collection => {
-            return {
-                ...collection,
-                content: collection.content.map(item => {
-                    const randomUser = this.generateRandomUser(1, 999, DataStore.loggedUser.id, DataStore.deletedUsers)
-                    if (DataStore.deletedUsers.includes(item.owner)) {
-                        return {
-                                ...item, 
-                                owner: randomUser,
-                                price: item.price + Math.floor(Math.random() * (item.price / 4)),
-                                ownerHistory: [
-                                    {
-                                        id: randomUser,
-                                        price: item.price
-                                    },
-                                    ...this.checkOwnerHistory(item.ownerHistory)
-                                    ]
-                        }
-                    } else {
-                        return item
-                    }
-                })
-            }
-        })
+        {
+            login: 'witnessq',
+            firstName: 'Никита',
+            secondName: 'Горев',
+            avatar: 'https://i.ibb.co/T1kjzL6/Abz-Gx-Ua-Cb-NX9-J8v-gzm2x6-Ay8j-Nv-HCOr-Fze-KB9-LXix6-Ux-He-ALv-Sfnp4z5-LVlq-K5tzh-Gu3-QLDe-Llk7z-X.jpg',
+            cover: 'https://i.ibb.co/kS6Rvmc/wallpaper-51094941.jpg',
+        },
 
-        
-        localStorage.setItem('shopStore', JSON.stringify(this.shopAssortment))
-    }
+        {
+            login: '2Garin',
+            firstName: 'Виктор',
+            secondName: 'Гарин',
+            avatar: 'https://i.ibb.co/7pGLBbx/maxresdefault-7.jpg',
+            cover: 'https://i.ibb.co/8rYRRtK/932570.jpg',
+        },
 
-    buyItem = (itemCollectionId, itemId, buyerId) => {
-        const item = this.shopAssortment[itemCollectionId].content[itemId]
+        {
+            login: 'daimor',
+            firstName: 'Дарья',
+            secondName: 'Миронова',
+            avatar: 'https://i.ibb.co/DKWVQCp/pjxf-Vyl-B8-Lhe-K9-J5p-Wj-F6b-RCcm-C7z-H170-Xbki-K9b-Jnx072-M1wtlf3o-Aw-P0-GX-Fyf-U4-RISEu71-Vr-O80.jpg',
+            cover: 'https://i.ibb.co/Yt6dCDG/1500x500.jpg',
+        },
 
-        this.shopAssortment[itemCollectionId].content[itemId] = {
-            ...item, 
-            owner: buyerId,
-            price: item.price + Math.floor(Math.random() * (item.price / 4)),
-            ownerHistory: [
-                {
-                    id: buyerId,
-                    price: item.price
-                },
-                ...this.checkOwnerHistory(item.ownerHistory)
-                ]
-        }
+        {
+            login: 'n3vrthem0re',
+            firstName: 'XXXXX',
+            secondName: 'XXXXXXXX',
+            avatar: 'https://i.ibb.co/mtVK9G0/1136503.jpg',
+            cover: 'https://i.ibb.co/gDhPJ1Q/ttb2f3-QJ65-XJv-OHD2-Pb-EBins2-Uhw-Ao-Aq-Sxwnf-BXNp-VAd-QEln-HAGMbu-Zbhl-Wx-V3di-Pz3-WX6-IQo2ki9u1-N.jpg',
+        },
 
-        localStorage.setItem('shopStore', JSON.stringify(this.shopAssortment))
-    }
+        {
+            login: 'rafonh',
+            firstName: 'РАФАЭЛЬ',
+            secondName: '"DROP TABLE *',
+            avatar: 'https://i.ibb.co/TtrKLCh/maxresdefault-8.jpg',
+            cover: 'https://i.ibb.co/DtvFKVz/quote-Mr-Robot-fsociety-computer-1942361.jpg',
+        },
 
-    generateRandomActivity = () => {
-        return this.shopAssortmentInit.map( (collection, collectionIndex) => {
-            return {
-                    c_id: collectionIndex,
-                    ...collection,
-                    content: collection.content.map((item, itemIndex) => {
-                            const finalPrice = Math.floor(Math.random() * 2000)
-                            const finalOwner = Math.floor(Math.random() * DataStore.usersFromLocal.length)
-                            return {
-                                    c_id: collectionIndex,
-                                    i_id: itemIndex,
-                                    ...item,
-                                    price: finalPrice,
-                                    owner: finalOwner,
-                                    ownerHistory: this.generateRandomOwnerHistory(finalPrice, finalOwner)
-                                    }
-                        })
-                    }
-        })
-    }
+        {
+            login: 'montrose',
+            firstName: 'Евгений',
+            secondName: 'Ершов',
+            avatar: 'https://i.ibb.co/02RYdr2/scale-1200-9.webp',
+            cover: 'https://i.ibb.co/fX2Gm4L/PFx-l93l-O89r-QSue-Bo-Vdr-E7it-POOld-YZJue7ogvb-Pbbn0-Hm-Qwlcdcf-Bn-Glmh-Au7-GVWGHQZIMiyg-TKYRO9-AXl.jpg',
+        },
 
-    generateRandomUser = (tempHistory, prevUserId, finalOwner, arrayWithUsers) => {
-        let newUser = Math.floor(Math.random() * DataStore.usersFromLocal.length)
+        {
+            login: 'comediant',
+            firstName: 'Мила',
+            secondName: 'Дубас',
+            avatar: 'https://i.ibb.co/RyXTf6K/2021-10-14-01-57-28.jpg',
+            cover: 'https://i.ibb.co/bXnQfWj/nikita-tikhomirov-dv7csihurkm-unsplash-e1596543255933.jpg',
+        },
 
-        if (tempHistory === 0 || newUser === finalOwner) {
-            while (newUser === finalOwner) {
-                newUser = Math.floor(Math.random() * DataStore.usersFromLocal.length)
-            }
+        {
+            login: 'gwynbla1d',
+            firstName: 'Рамиль',
+            secondName: 'Бекбусинов',
+            avatar: 'https://i.ibb.co/cNH5dXk/scale-1200-8.webp',
+            cover: 'https://i.ibb.co/W2NJjTT/katana-drawing-27.jpg',
+        },
 
-        } else if (newUser === prevUserId) {
-            while (newUser === prevUserId) {
-                newUser = Math.floor(Math.random() * DataStore.usersFromLocal.length)
-            }
-        } else if (arrayWithUsers.includes(newUser)) {
-            while (arrayWithUsers.includes(newUser)) {
-                newUser = Math.floor(Math.random() * DataStore.usersFromLocal.length)
-            }
-        }
+        {
+            login: 'Stryker',
+            firstName: 'Давид',
+            secondName: 'Попов',
+            avatar: 'https://i.ibb.co/RC5bw9Y/scale-1200-7.webp',
+            cover: 'https://i.ibb.co/zNZ1qVQ/Everlasting-Summer-Background-114.jpg',
+        },
 
-        return newUser
-    }
+        {
+            login: 'fadedpixel',
+            firstName: 'Izabel',
+            secondName: 'Shapiro',
+            avatar: 'https://i.ibb.co/FY2BBCT/9j0dcb-ADE51u-Lk-JLni-B0e7-E6l-ETWjvr5f9zpxj-OQPsu-CGOUye-Qq-JD5-LMy-PW9cwcckq-LX4-V-u.jpg',
+            cover: 'https://i.ibb.co/BB5X2rx/Isabella-watches-Phineas-fall.webp',
+        },
 
-    generateRandomOwnerHistory = (finalPrice, finalOwner) => {
-        const ownersCount = Math.floor(Math.random() * 5)
-        const preFinalPrice = finalPrice - Math.floor(Math.random() * (Math.floor(finalPrice / 20)))
-        const ownerHistory = [{id: finalOwner, price: preFinalPrice}]
-
-        let tempHistory = []
-        let prevPrice = 0
-        let prevUserId = 0
-
-        for (let tempOwner = 0; tempOwner <= ownersCount; tempOwner++) {
-            const newUser = this.generateRandomUser(tempHistory, prevUserId, finalOwner, [])
-            prevUserId = newUser
-            
-            if (tempOwner === 0) {
-                prevPrice = Math.floor(Math.random() * 200)
-                tempHistory.unshift({
-                    id: newUser,
-                    price: prevPrice
-                })
-            } else {
-                prevPrice = Math.floor(Math.random() * (preFinalPrice - prevPrice) + prevPrice)
-                tempHistory.unshift({
-                    id: newUser,
-                    price: prevPrice
-                })
-            }
-        }
-
-        return ownerHistory.concat(tempHistory)
-    }
-
-    getShopAssortmentFromLocal = () => {
-        const tempShop = JSON.parse(localStorage.getItem('shopStore'))
-
-        if (!!tempShop) {
-            return tempShop
-        } else {
-            const generatedAssortment = this.generateRandomActivity()
-            localStorage.setItem('shopStore', JSON.stringify(generatedAssortment))
-            return generatedAssortment
-        }
-    }
+        {
+            login: 'acidluv',
+            firstName: 'Анна',
+            secondName: 'Гаркуша',
+            avatar: 'https://i.ibb.co/NCZz33F/0wm-Pkr-OSWw4v-VQJp-Fx-Cd-Hm-P0vl5w-Zorjb-W85-C6-Nd-L5c-RCa-ZHZiyl-S-R5-Fom-NMXVTTBm-Bxl-Fu-Xhv-D-n.jpg',
+            cover: 'https://i.ibb.co/mvfWsqS/f75c11c9a31c4ede5cc20e5d6aadcfcd.png',
+        },
+    ]
 }
-
-export default new ShopStore()
