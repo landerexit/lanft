@@ -2,6 +2,8 @@ import React from "react";
 import { observer, inject } from "mobx-react";
 import { Link } from "react-router-dom";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 import noAvatar from '../../img/noavatar.svg'
 import etherImg from '../../img/ether.svg'
 
@@ -18,18 +20,37 @@ const DropMenu = inject( "mainStore", "UsersStore", "ButtonsStore" )(
 
             mainStore.deleteUser()
         }
+
+        const variantsWrapper = {
+            hidden: { opacity: 0 },
+            visible: { opacity: 1},
+        }
+
+        const variantsMenu = {
+            hidden: { x: 500 },
+            visible: { x: 0 },
+        }
     
         const avatar = UsersStore.loggedUser ? UsersStore.loggedUser.avatar : noAvatar
 
         return (
-            <>
+            <AnimatePresence>
                 { 
-                    ButtonsStore.isDropMenuOpened && 
-                    <div 
+                    ButtonsStore.isDropMenuOpened &&
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        variants={variantsWrapper}
                         className="drop-menu__wrapper"
                         onClick={ButtonsStore.setDropMenu}
                         >
-                        <div 
+                        <motion.div
+                            initial="hidden"
+                            animate="visible"
+                            exit="hidden"
+                            variants={variantsMenu}
+                            transition={{ ease: "easeIn", duration: .2 }}
                             className="drop-menu flex flex-column"
                             onClick={event => event.stopPropagation()}
                         >   
@@ -122,10 +143,10 @@ const DropMenu = inject( "mainStore", "UsersStore", "ButtonsStore" )(
                                     </div>
                                 </>
                             }
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 }
-            </>
+            </AnimatePresence>
         )
     })
 )

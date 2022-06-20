@@ -49,7 +49,7 @@ export class ButtonsStore {
 
     setIntroChecked () {
         this.isIntroChecked = true
-        localStorage.setItem('introChecked', JSON.stringify(this.introChecked))
+        localStorage.setItem('introChecked', JSON.stringify(this.isIntroChecked))
     }
 
     // -------- Drop Menu --------
