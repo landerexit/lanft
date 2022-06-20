@@ -1,18 +1,9 @@
 @import '../_vars'
 
 .intro-container
-    border: 1px solid $clr-primary-800
     border-radius: .5rem
 
     max-width: 30rem
-
-    &__image
-        padding: $gap-700
-
-    &__hr
-        border: none
-        border-top: 1px solid $clr-primary-800
-        width: 100%
 
     &__menu-container
         padding: $gap-400
@@ -22,12 +13,11 @@
             margin-top: $gap-500
 
     &__headline
-        font-size: 1.75rem
+        font-size: 1.75em
         font-weight: bold
         line-height: 2rem
 
     &__description
-        font-size: .9rem
         margin-top: $gap-300
 
     &__status-container
@@ -35,19 +25,29 @@
             margin-left: $gap-300
 
     &__status-dot
-        width: .75rem
+        width: .75em
+        height: .75em
+        background-color: $clr-tertiary-500
         cursor: pointer
         border-radius: 50%
 
         &__active
-            filter: saturate(80)
+            background-color: white
+            border: 2px solid $clr-tertiary-500
 
     &__buttons-container
         &>*+*
             margin-left: $gap-300
 
+@media screen and (max-width: 1024px)
+    .intro-container
+        font-size: .8rem
+
+        &__image
+            width: 70%
+
 @media screen and (max-width: 1024px) and (max-height: 600px)
     .intro-container
+        font-size: .5rem
         &__image
-            width: 80%
-            padding: $gap-200
+            width: 50%

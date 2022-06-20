@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function UserTile({ user }) {
     return (
         <Link
-            className="flex flex-column flex-align-center collection-container shop-page__collection-container"
+            className="flex flex-column flex-align-center collection-container"
             to={"/users/1337" + user.id}
             key={"user" + user.id}
         >
@@ -16,12 +16,12 @@ function UserTile({ user }) {
                 />
             </div>
             
-            <section className="user-page__avatar-shifter collection-container__avatar-shifter ">
+            <section className="collection-container__avatar-shifter ">
                 <div className="collection-container__avatar-container">
-                        <div className="avatar-container__avatar-cut user-page__avatar-cut">
+                        <div className="avatar-container__avatar-cut profile-page__avatar-cut">
                             <img
                                 src={user.avatar}
-                                className="avatar-container__avatar-img user-page__avatar-img"
+                                className="avatar-container__avatar-img profile-page__avatar-img"
                                 alt="аватар"
                             />
                         </div>

@@ -3,6 +3,8 @@ import { Formik } from "formik";
 import Dropzone from "react-dropzone";
 import { inject, observer } from "mobx-react";
 
+import InputField from "../components/InputField";
+
 import noAvatar from '../../img/noavatar.svg'
 
 const RegistrationPage = inject("UsersStore", "ValidationVars")(
@@ -63,36 +65,25 @@ const RegistrationPage = inject("UsersStore", "ValidationVars")(
                     {({values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
                     
                     <section className="fields-container">
-                        {ValidationVars.fieldsRegSample.map( (field, index) => {
-                            return (
-                                <section className="field-container" key={'signinInput' + index}>
-                                    <span className="field-container__field-legend">
-                                        {field.nameForLegend}
-                                    </span>
-    
-                                    {touched[field.name] && errors[field.name] && 
-                                        <p className='field-container__error-sign'>
-                                          {" - " + errors[field.name]}
-                                        </p>}
-                                    
-                                    <input 
-                                        className="field-container__field-input"
-                                        type={field.type}
-                                        name={field.name}
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values[field.name]}
-                                    ></input>
-    
-                                </section>
-                            )})}
-                            <button
-                                className="primary-button fields-container__submit"
-                                onClick={handleSubmit}
-                                type="submit"
-                            >
-                                Отправить
-                            </button>
+                        
+                        {
+                            ValidationVars.fieldsRegSample.map( (field, index) => 
+                                <InputField 
+                                    key={'input' + field.name + index}
+                                    field={field} touched={touched} 
+                                    errors={errors} handleChange={handleChange}
+                                    handleBlur={handleBlur} values={values}
+                                />)
+                        }
+
+                        <button
+                            className="primary-button fields-container__submit"
+                            onClick={handleSubmit}
+                            type="submit"
+                        >
+                            Отправить
+                        </button>
+
                     </section>)}
                                     
                     </Formik>

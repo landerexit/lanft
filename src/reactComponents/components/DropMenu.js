@@ -26,15 +26,15 @@ const DropMenu = inject( "mainStore", "UsersStore", "ButtonsStore" )(
                 { 
                     ButtonsStore.isDropMenuOpened && 
                     <div 
-                        className="wallet-menu__wrapper"
+                        className="drop-menu__wrapper"
                         onClick={ButtonsStore.setDropMenu}
                         >
                         <div 
-                            className="wallet-menu flex flex-column"
+                            className="drop-menu flex flex-column"
                             onClick={event => event.stopPropagation()}
                         >   
                             <div 
-                                className="wallet-menu__line wallet-menu__back"
+                                className="drop-menu__line drop-menu__back"
                                 onClick={ButtonsStore.setDropMenu}
                             >
                                 X
@@ -42,27 +42,27 @@ const DropMenu = inject( "mainStore", "UsersStore", "ButtonsStore" )(
 
                             <Link 
                                 to="/shop"
-                                className="mobilescreens wallet-menu__line"
+                                className="mobilescreens drop-menu__line"
                             >
                                 Каталог
                             </Link>
 
                             <Link 
                                 to="/users/global" 
-                                className="mobilescreens wallet-menu__line"
+                                className="mobilescreens drop-menu__line"
                             >
                                 Пользователи
                             </Link>
 
                             <Link 
-                                className="flex flex-align-center wallet-menu__line wallet-menu__user-info"
+                                className="flex flex-align-center drop-menu__line drop-menu__user-info"
                                 to="/myprofile"
                             >
-                                <div className="avatar-container wallet-menu__avatar-container">
-                                    <div className="avatar-container__avatar-cut wallet-menu__avatar-cut">
+                                <div className="avatar-container drop-menu__avatar-container">
+                                    <div className="avatar-container__avatar-cut drop-menu__avatar-cut">
                                         <img
                                             src={avatar ? avatar : noAvatar }
-                                            className="avatar-container__avatar-img wallet-menu__avatar-img"
+                                            className="avatar-container__avatar-img drop-menu__avatar-img"
                                             alt="аватар"
                                         />
                                     </div>
@@ -70,20 +70,20 @@ const DropMenu = inject( "mainStore", "UsersStore", "ButtonsStore" )(
 
                                 {
                                     UsersStore.loggedUser ?
-                                        <div className="flex flex-column wallet-menu__names">  
-                                            <span className="wallet-menu__name">{`${UsersStore.loggedUser.firstName} ${UsersStore.loggedUser.secondName}`}</span>
-                                            <span className="wallet-menu__nickname">{"@" + UsersStore.loggedUser.login}</span>
+                                        <div className="flex flex-column drop-menu__names">  
+                                            <span className="drop-menu__name">{`${UsersStore.loggedUser.firstName} ${UsersStore.loggedUser.secondName}`}</span>
+                                            <span className="drop-menu__nickname">{"@" + UsersStore.loggedUser.login}</span>
                                         </div>
                                             : 
-                                        <span className="wallet-menu__nickname">Мой Аккаунт</span>
+                                        <span className="drop-menu__nickname">Мой Аккаунт</span>
                                 }
                             </Link>
                             {
                                 UsersStore.loggedUser && 
                                 <>
-                                    <div className="flex flex-align-center wallet-menu__line">
+                                    <div className="flex flex-align-center drop-menu__line">
                                         <span>Ваш баланс: </span>
-                                        <fieldset className="balance-container wallet-menu__balance-container flex flex-align-center flex-justify-center">
+                                        <fieldset className="balance-container drop-menu__balance-container flex flex-align-center flex-justify-center">
                                             <img 
                                                 className="balance-container__ether-img"
                                                 alt="etherium"
@@ -92,7 +92,7 @@ const DropMenu = inject( "mainStore", "UsersStore", "ButtonsStore" )(
                                             <small>{UsersStore.loggedUser.balance}</small>
                                         </fieldset>
                                     </div>
-                                    <div className="wallet-menu__line wallet-menu__buttons">
+                                    <div className="drop-menu__line drop-menu__buttons">
                                         <button
                                                 className='primary-button'
                                                 onClick={ButtonsStore.addBalance}
@@ -106,7 +106,7 @@ const DropMenu = inject( "mainStore", "UsersStore", "ButtonsStore" )(
                                             Выйти из аккаунта
                                         </button>
                                     </div>
-                                    <div className="wallet-menu__line wallet-menu__delete">
+                                    <div className="drop-menu__line drop-menu__delete">
                                         <button
                                             className='secondary-button secondary-button__delete'
                                             onClick={deleteUser}

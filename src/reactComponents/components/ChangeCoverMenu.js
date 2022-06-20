@@ -16,7 +16,7 @@ const ChangeCoverMenu = inject("UsersStore", "ButtonsStore")(
         }
 
         return (
-            <div className="wrapper  cover-menu__wrapper flex flex flex-align-center flex-justify-center">
+            <div className="wrapper cover-menu__wrapper flex flex flex-align-center flex-justify-center">
                 <section className="flex flex-column flex-align-center cover-menu__change-cover-container">
                     <button
                         className="popup-container__exit-button primary-button"

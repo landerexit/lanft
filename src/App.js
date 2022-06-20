@@ -21,7 +21,7 @@ import Footer from './reactComponents/components/Footer'
 import PopUp from "./reactComponents/components/PopUp"
 
 const App = inject( "ShopStore", "UsersStore",  "ButtonsStore" )(
-  observer(({ShopStore, UsersStore,  ButtonsStore }) => {
+  observer(({ ShopStore, UsersStore,  ButtonsStore }) => {
       const navigate = useNavigate()
       
       const NavigationControl = {
@@ -131,6 +131,5 @@ const App = inject( "ShopStore", "UsersStore",  "ButtonsStore" )(
       );
   })
 )
-  
 
 export default App

@@ -3,6 +3,7 @@ import { inject, observer } from "mobx-react";
 import { Formik } from "formik";
 
 import img1 from "../../img/LoginPage/image1.png"
+import InputField from "../components/InputField";
 
 const LoginPage = inject("UsersStore", "ValidationVars")(
     observer(({NavigationControl, UsersStore, ValidationVars}) => {
@@ -36,41 +37,22 @@ const LoginPage = inject("UsersStore", "ValidationVars")(
                             validationSchema={ValidationVars.loginSchema}
                         >
                         {({values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
-                        <>
                             <div className="fields-container login-page__fields-container">
-                                {ValidationVars.fieldsLoginSample.map( (field, index) => {
-                                        return (
-                                            <div className="field-container" key={'loginInput' + index}>
-                                                <span className="field-container__field-legend">
-                                                    {field.nameForLegend}
-                                                </span>
-                                        
-                                                {touched[field.name] && errors[field.name] && 
-                                                    <p className='field-container__error-sign'> 
-                                                        {" - " + errors[field.name]}
-                                                    </p>}
-                                                
-                                                <input 
-                                                    className="field-container__field-input"
-                                                
-                                                    type={field.type}
-                                                    name={field.name}
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    value={values[field.name]}
-                                                ></input>
-                                            </div>
-                                )})}
-                                              
+                                    {
+                                        ValidationVars.fieldsLoginSample.map( (field, index) => <InputField 
+                                        field={field} index={index} 
+                                        errors={errors} touched={touched} 
+                                        handleBlur={handleBlur} values={values}
+                                        handleChange={handleChange} />)
+                                    }
+                                <button
+                                    className="primary-button"
+                                    onClick={handleSubmit}
+                                    type="submit"
+                                >
+                                    Отправить
+                                </button>          
                             </div>
-                            <button
-                                className="primary-button"
-                                onClick={handleSubmit}
-                                type="submit"
-                            >
-                                Отправить
-                            </button>  
-                        </>
                         )}
                     </Formik>
                 </div>

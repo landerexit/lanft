@@ -48,7 +48,7 @@ export class ButtonsStore {
     }
 
     setIntroChecked () {
-        this.introChecked = true
+        this.isIntroChecked = true
         localStorage.setItem('introChecked', JSON.stringify(this.introChecked))
     }
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function CollectionTile({ collection, index }) {
     return (
         <Link
-            className="flex flex-column flex-align-center collection-container shop-page__collection-container"
+            className="flex flex-column flex-align-center collection-container"
             to={`/collection/${collection.collectionLink}`}
             key={"collection" + index}
         >

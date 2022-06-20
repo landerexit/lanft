@@ -3,7 +3,7 @@ import { inject, observer } from "mobx-react";
 
 import ItemTile from "../components/ItemTile";
 
-const CollectionPage = inject("mainStore", "UsersStore", "ShopStore", "ButtonsStore")(
+const CollectionPage = inject( "ShopStore" )(
     observer(({ collectionIndex, ShopStore }) => {
 
         const collection = ShopStore.shopAssortment[collectionIndex]
@@ -66,7 +66,10 @@ const CollectionPage = inject("mainStore", "UsersStore", "ShopStore", "ButtonsSt
                     </div>
                 </section>
                 <section className="collection-page__items">
-                    {items.map(item => <ItemTile key={"item" + item.c_id + item.i_id} item={item} isShop={true}/>)}
+                    {  
+                        items.map(item => 
+                            <ItemTile key={"item" + item.c_id + item.i_id} item={item} isShop={true}/>)
+                    }
                 </section>
             </section>
         )

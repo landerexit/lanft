@@ -28,17 +28,17 @@ const ProfilePage = inject("ShopStore", "UsersStore", "ButtonsStore")(
         return (
             <>
             {ButtonsStore.isCoverMenuOpened && <ChangeCoverMenu cover={cover}/>}
-            <div className="wrapper user-page__background__wrapper widesreens">
-                <div className="wrapper user-page__background" style={{background: 'url(' + user.cover + ')', backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: 'center'}}/>
+            <div className="wrapper profile-page__background__wrapper widesreens">
+                <div className="wrapper profile-page__background" style={{background: 'url(' + user.cover + ')', backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: 'center'}}/>
             </div>
-            <section className='flex flex-column user-page'>
+            <section className='flex flex-column profile-page'>
                 <header 
-                    className="flex flex-align-center flex-justify-center user-page__header"
+                    className="flex flex-align-center flex-justify-center profile-page__header"
                     style={{backgroundImage: "url("+ cover +")"}}
                 >
                     {isLogged && 
                         <button
-                            className="secondary-button user-page__open-change-cover"
+                            className="secondary-button profile-page__open-change-cover"
                             onClick={ButtonsStore.setCoverMenu}
                         >
                             Изменить фон
@@ -46,31 +46,31 @@ const ProfilePage = inject("ShopStore", "UsersStore", "ButtonsStore")(
                     }
                 </header>
                 
-                <main className="user-page__main-container">
-                    <section className="user-page__avatar-shifter">
-                        <section className="avatar-container user-page__avatar-container">
+                <main className="profile-page__main-container">
+                    <section className="profile-page__avatar-shifter">
+                        <section className="avatar-container profile-page__avatar-container">
     
-                            <div className="avatar-container__avatar-cut user-page__avatar-cut">
+                            <div className="avatar-container__avatar-cut profile-page__avatar-cut">
                                 <img
                                     src={avatar}
-                                    className="avatar-container__avatar-img user-page__avatar-img"
+                                    className="avatar-container__avatar-img profile-page__avatar-img"
                                     alt="аватар"
                                 />
                             </div>
                                 <img
                                 src={verifStar}
-                                className="avatar-container__verif-star user-page__verif-star"
+                                className="avatar-container__verif-star profile-page__verif-star"
                                 alt="верификация"
                                 />
     
                         </section>
                     </section>
-                    <section className="user-page__user-panel flex flex-align-center">
-                        <section className="user-page__user-info">
-                            <div className="flex user-page__name-and-balance">
-                                <section className="user-page__names-container">
-                                    <h2 className="user-page__user-name">{firstName + " " + secondName}</h2>
-                                    <h3 className="user-page__nickname">{"@" + login}</h3>
+                    <section className="profile-page__user-panel flex flex-align-center">
+                        <section className="profile-page__user-info">
+                            <div className="flex profile-page__name-and-balance">
+                                <section className="profile-page__names-container">
+                                    <h2 className="profile-page__user-name">{firstName + " " + secondName}</h2>
+                                    <h3 className="profile-page__nickname">{"@" + login}</h3>
                                     {isLogged && 
                                         <h3>
                                             Это ваш профиль
@@ -78,7 +78,7 @@ const ProfilePage = inject("ShopStore", "UsersStore", "ButtonsStore")(
                                     }
                                 </section>
                                 {isLogged &&
-                                    <fieldset className="balance-container user-page__balance-container flex flex-align-center">
+                                    <fieldset className="balance-container profile-page__balance-container flex flex-align-center">
                                         <img 
                                             className="balance-container__ether-img"
                                             alt="etherium"
@@ -89,30 +89,31 @@ const ProfilePage = inject("ShopStore", "UsersStore", "ButtonsStore")(
                                     </fieldset>
                                 }
                             </div>
-                            <section className="user-page__statistic-container">
-                                <div className="user-page__statistic-line">
-                                    <small className="user-page__statistic-number">
+                            <section className="profile-page__statistic-container">
+                                <div className="profile-page__statistic-line">
+                                    <small className="profile-page__statistic-number">
                                         {itemsCounter}
                                     </small>
-                                    <small className="user-page__statistic-text">Предметов</small>
+                                    <small className="profile-page__statistic-text">Предметов</small>
                                 </div>
-                                <div className="user-page__statistic-line">
-                                    <small className="user-page__statistic-number">{user.views + "M"}</small>
-                                    <small className="user-page__statistic-text">Просмотров</small>
+                                <div className="profile-page__statistic-line">
+                                    <small className="profile-page__statistic-number">{user.views + "M"}</small>
+                                    <small className="profile-page__statistic-text">Просмотров</small>
                                 </div>
-                                <div className="user-page__statistic-line">
-                                    <small className="user-page__statistic-number">{user.subs + 'K'}</small>
-                                    <small className="user-page__statistic-text">Подписчиков</small>
+                                <div className="profile-page__statistic-line">
+                                    <small className="profile-page__statistic-number">{user.subs + 'K'}</small>
+                                    <small className="profile-page__statistic-text">Подписчиков</small>
                                 </div>
                             </section>
                         </section>
     
                     </section>
-                    <section className="user-page__inventory">
+                    <section className="profile-page__inventory">
                         { 
                             itemsCounter ? 
                             ShopStore.shopAssortment.map( collection => 
-                                collection.content.map( item => item.owner === user.id && <ItemTile key={"item" + item.c_id + item.i_id} item={item} isShop={false}/>)) 
+                                collection.content.map( item => item.owner === user.id && 
+                                    <ItemTile key={"item" + item.c_id + item.i_id} item={item} isShop={false}/>)) 
                                 : 
                             <h3>Инвентарь пуст</h3>
                         }
