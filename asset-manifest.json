@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/lanft/static/css/main.e9983ce5.css",
-    "main.js": "/lanft/static/js/main.e728fe3f.js",
+    "main.css": "/lanft/static/css/main.a4cc9e28.css",
+    "main.js": "/lanft/static/js/main.efbe1f6d.js",
     "static/media/no-cover.jpg": "/lanft/static/media/no-cover.b7aba27c39f8adaf75fc.jpg",
     "static/media/image1.png": "/lanft/static/media/image1.d8d4048dd0f92453e094.png",
     "static/media/image2.png": "/lanft/static/media/image2.724df11ee2b17a5392b2.png",
@@ -18,11 +18,11 @@
     "static/media/habr.svg": "/lanft/static/media/habr.e69641e3de34bb022dbb5c97b812c328.svg",
     "static/media/github.svg": "/lanft/static/media/github.73e6eeb2049274820f2f54c1a64b299a.svg",
     "static/media/arrow.svg": "/lanft/static/media/arrow.5101d0524bc5bc2125a59721c05b222a.svg",
-    "main.e9983ce5.css.map": "/lanft/static/css/main.e9983ce5.css.map",
-    "main.e728fe3f.js.map": "/lanft/static/js/main.e728fe3f.js.map"
+    "main.a4cc9e28.css.map": "/lanft/static/css/main.a4cc9e28.css.map",
+    "main.efbe1f6d.js.map": "/lanft/static/js/main.efbe1f6d.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9983ce5.css",
-    "static/js/main.e728fe3f.js"
+    "static/css/main.a4cc9e28.css",
+    "static/js/main.efbe1f6d.js"
   ]
 }
