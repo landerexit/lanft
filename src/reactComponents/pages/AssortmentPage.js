@@ -20,6 +20,7 @@ const AssortmentPage = inject("animationVariants", "ShopStore")(
                         ShopStore.shopAssortment.map( (collection, index) => 
                             <motion.div
                                 variants={ animationVariants }
+                                style={{ minWidth: 100 + "%"}}
                             >
                                 <CollectionTile key={"collectionTile" + index} collection={collection} index={index} />
                             </motion.div>

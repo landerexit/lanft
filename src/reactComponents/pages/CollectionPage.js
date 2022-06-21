@@ -77,6 +77,7 @@ const CollectionPage = inject( "animationVariants", "ShopStore" )(
                         items.map(item => 
                             <motion.div
                                 variants={ animationVariants }
+                                style={{ minWidth: 100 + "%"}}
                                 key={"item" + item.c_id + item.i_id}
                             >
                                 <ItemTile  item={item} isShop={true}/>

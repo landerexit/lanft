@@ -23,6 +23,7 @@ const AllUsersPage = inject("animationVariants", "UsersStore")(
                             !UsersStore.getDeletedUsers().includes(user.id) &&
                                 <motion.div
                                     variants={ animationVariants }
+                                    style={{ minWidth: 100 + "%"}}
                                 >
                                     <UserTile key={'userTile' + user.id} user={user} />
                                 </motion.div>
