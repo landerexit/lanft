@@ -116,7 +116,7 @@ const DropMenu = inject( "mainStore", "UsersStore", "ButtonsStore" )(
                                     <div className="drop-menu__line drop-menu__buttons">
                                         <button
                                                 className='primary-button'
-                                                onClick={ButtonsStore.addBalance}
+                                                onClick={UsersStore.addBalance}
                                             >
                                                 Пополнить баланс на +2000
                                         </button>
